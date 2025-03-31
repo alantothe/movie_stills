@@ -31,9 +31,9 @@ const NavBar = () => {
         setToggle={handleSubBarClick}
       />
       {screenWidth > 980 ? (
-        <SubBar screenWidth={screenWidth} />
+        <SubBar screenWidth={screenWidth} setToggle={handleSubBarClick} />
       ) : toggleSubBar ? (
-        <SubBar screenWidth={screenWidth} />
+        <SubBar screenWidth={screenWidth} setToggle={handleSubBarClick} />
       ) : null}
     </div>
   );

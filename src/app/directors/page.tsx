@@ -1,6 +1,7 @@
 const Directors = () => {
     return (
         <>
+            <h1>Directors</h1>
         </>
     )
 }

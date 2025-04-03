@@ -1,11 +1,13 @@
-const Alphabetically = () => {
-    return (
-        <>
-            <h1>
-                Alphabetically
-            </h1>
-        </>
-    )
-}
+import AlphabeticalPage from "@/features/A-ZPage/AlphabeticalPage";
 
-export default Alphabetically
+const Alphabetically = () => {
+  return (
+    <>
+      <h1>
+        <AlphabeticalPage />
+      </h1>
+    </>
+  );
+};
+
+export default Alphabetically;

@@ -21,7 +21,7 @@ const HomePage = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className="flex-1 items-center">
       <MasonryLayout data={data!}/>
     </div>
   )

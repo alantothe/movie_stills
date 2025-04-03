@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layout/Navigation/NavBar";
-
+import QueryProvider from "@/query/queryClinet";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,12 +28,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
-          <nav>
-            <NavBar />
-          </nav>
-        </header>
-        <main>{children}</main>
+        <QueryProvider>
+          <header>
+            <nav>
+              <NavBar />
+            </nav>
+          </header>
+          <main>{children}</main>
+        </QueryProvider>
       </body>
     </html>
   );

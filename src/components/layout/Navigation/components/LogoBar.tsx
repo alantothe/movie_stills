@@ -8,19 +8,16 @@ type LogoBarProps = {
 };
 
 const LogoBar = ({ setToggle, screenWidth, currentToggle }: LogoBarProps) => {
-
   return (
-    <div className={`bg-black flex ${screenWidth <= 460 ? 'justify-between' : ''}`}>
-      
-            <h1 
+    <div
+      className={`bg-black flex ${screenWidth <= 460 ? "justify-between" : ""}`}
+    >
+      <h1
         className={`text-xl pl-2 py-3 text-wrap ${
-          screenWidth > 460 ? 'flex-1 text-center' : ''
+          screenWidth > 460 ? "flex-1 text-center" : ""
         }`}
       >
-        <Link href={`/`}>
-        
-        {"[mise-en-scene]"}
-        </Link>
+        <Link href={`/`}>{"[mise-en-scene]"}</Link>
       </h1>
 
       {screenWidth < 980 ? (

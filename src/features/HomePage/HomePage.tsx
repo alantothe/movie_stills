@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import MasonryLayout from "./components/MasonryLayout";
 import { Movie } from "./types";
 
 async function fetchMovies(): Promise<Movie[]> {
@@ -19,7 +20,11 @@ const HomePage = () => {
 
   console.log(data);
 
-  return <div>Hello</div>;
+  return (
+    <div>
+      <MasonryLayout data={data!}/>
+    </div>
+  )
 };
 
 export default HomePage;

@@ -1,11 +1,9 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import LetterSection from "./LetterSection";
-import fetchDirectors from "./api/getDirectors"
+import LetterSection from "../../components/AlphabeticalOrder/LetterSection";
+import fetchDirectors from "./api/getDirectors";
 
 const DirectorsPage = () => {
-
-
   const { data, isLoading, isError } = useQuery({
     queryKey: ["allDirectors"],
     queryFn: fetchDirectors,

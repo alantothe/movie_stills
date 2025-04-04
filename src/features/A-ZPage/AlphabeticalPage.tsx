@@ -1,22 +1,28 @@
-"use client"
-import { alphabetMap } from "./array";
+"use client";
+import { alphabetMap } from "./alphabetMap";
 import { useQuery } from "@tanstack/react-query";
+import LetterSection from "./LetterSection";
 
 type DirectorOnlyProps = {
-  director: string;
+  letter: string;
+  names: string[];
 };
-// you must filter the response with filter() and return an array of objects/map the looks like this  
-// {
-// letter: string,
-//  names: string[]
-//}
 const AlphabeticalPage = () => {
   async function fetchDirectors(): Promise<DirectorOnlyProps[]> {
     const response = await fetch("http://localhost:8081/only/directors/");
 
-      
+    const data = await response.json();
 
-    return response.json();
+    for (const value of data) {
+      const firstLetter = value.director[0];
+      if (alphabetMap.has(firstLetter)) {
+        alphabetMap.get(firstLetter)?.push(value.director);
+      }
+    }
+    return Array.from(alphabetMap.entries()).map(([letter, names]) => ({
+      letter,
+      names,
+    }));
   }
 
   const { data, isLoading, isError } = useQuery({
@@ -30,12 +36,11 @@ const AlphabeticalPage = () => {
 
   return (
     <div>
-      {/* {alphabet.map((letter) => (
-        <div key={letter}>
-              <h1 className="text-4xl font-bold">{letter}</h1>
-              
+      {data?.map((letter) => (
+        <div key={letter.letter}>
+          <LetterSection letter={letter.letter} names={letter.names} />
         </div>
-      ))} */}
+      ))}
     </div>
   );
 };

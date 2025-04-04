@@ -4,9 +4,15 @@ type LetterProps = {
     names: string[]
 }
 
-const LetterSection = () => {
+const LetterSection = ({letter, names}: LetterProps) => {
     return (
         <div> 
+            <h1>{letter}</h1>
+            <ul>
+                {names.map((director) => (
+                    <li key={director}>{director}</li>
+            ))}
+            </ul>
 
         </div>
     )

@@ -1,7 +1,8 @@
+import DirectorsPage from "@/features/DirectorsPage/DirectorsPage"
 const Directors = () => {
     return (
         <>
-            <h1>Directors</h1>
+            <DirectorsPage/>
         </>
     )
 }

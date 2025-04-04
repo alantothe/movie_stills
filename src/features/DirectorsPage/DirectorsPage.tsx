@@ -1,9 +1,29 @@
+"use client";
+import { useQuery } from "@tanstack/react-query";
+import LetterSection from "./LetterSection";
+import fetchDirectors from "./api/getDirectors"
+
 const DirectorsPage = () => {
-    return (
-        <div>
 
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["allDirectors"],
+    queryFn: fetchDirectors,
+  });
+
+  if (isLoading) return <p>is Loading...</p>;
+  if (isError) return <p>Error : {isError}</p>;
+  console.log(data);
+
+  return (
+    <div>
+      {data?.map((letter) => (
+        <div key={letter.letter}>
+          <LetterSection letter={letter.letter} names={letter.names} />
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default DirectorsPage
+export default DirectorsPage;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import getTitles from "./api/getTitles";
 import { useQuery } from "@tanstack/react-query";
 import LetterSection from "@/components/AlphabeticalOrder/LetterSection";
@@ -7,10 +7,8 @@ const AZPage = () => {
     queryKey: ["getTitles"],
     queryFn: getTitles,
   });
-
   if (isLoading) return <p>is Loading...</p>;
   if (isError) return <p>Error : {isError}</p>;
-
   return (
     <div>
       <ul>

@@ -52,8 +52,6 @@ export default async function getCountriesFlag(): Promise<
     const key = item.toLowerCase();
     return nameReplacements[key] || item;
   });
-
-  console.log(countriesArr);
   const arrCountryFlag = getAllFlags(countriesArr);
 
   return arrCountryFlag;

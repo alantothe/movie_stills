@@ -1,9 +1,24 @@
+"use client";
+import { useQuery } from "@tanstack/react-query";
+import getGenres from "./api/getGenres";
+import GenreCard from "./components/GenreCard";
 const GenresPage = () => {
-    return (
-        <div>
-
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["allGenres"],
+    queryFn: getGenres,
+  });
+  if (isLoading) return <p>is Loading...</p>;
+  if (isError) return <p>is Error...</p>;
+  console.log(data);
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      {data?.map((genre) => (
+        <div  key={genre}>
+          <GenreCard genre={genre} />
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default GenresPage
+export default GenresPage;

@@ -1,9 +1,16 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
+import getYears from "./api/getYears";
 const YearPage = () => {
-    return (
-        <div>
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["years"],
+    queryFn: getYears,
+  });
+  if (isLoading) return <p>... is Loading</p>;
+  if (isError) return <p>Error: {isError}</p>;
+  console.log(data);
+  return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default YearPage 
+export default YearPage;

@@ -1,6 +1,8 @@
+import YearPage from "@/features/YearPage/YearPage"
 const Year = () => {
     return (
         <>
+            <YearPage/>
         </>
     )
 }

@@ -20,6 +20,13 @@ const MoviePage = ({ slug }: MoviePageProps) => {
         <TitleImageInfo
           title={data.title}
           imageUrl={data.stills[0].image_url}
+          info={{
+            director: data.director,
+            country: data.country,
+            genre: data.genre,
+            date_released: data.date_released,
+            rating: data.rating,
+          }}
         />
       ) : null}
     </div>

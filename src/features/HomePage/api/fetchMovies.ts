@@ -1,5 +1,5 @@
-import { Movie } from "../types";
-import { MovieFiltered } from "../types";
+import { Movie } from "../../../utils/types";
+import { MovieFiltered } from "../../../utils/types";
 export async function fetchMovies(): Promise<MovieFiltered[]> {
   const response = await fetch("http://localhost:8081/movies/");
   const data = await response.json();

@@ -1,4 +1,4 @@
-type Still = {
+export type Still = {
   id: number;
   image_url: string;
   imdb_id: string;

@@ -5,11 +5,11 @@ type MoviePageProps = {
     slug: string;
   };
 };
-const Page = ({ params }: MoviePageProps) => {
-  console.log(params.slug)
+const Page = async ({ params }: MoviePageProps) => {
+  const slug = await params;
   return (
     <div>
-      <MoviePage slug={params.slug} />
+      <MoviePage slug={slug.slug} />
     </div>
   );
 };

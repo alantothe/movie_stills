@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MovieFiltered } from "../types";
+import { MovieFiltered } from "../../../utils/types";
 import Link from "next/link";
 const MovieCard = ({ movie }: { movie: MovieFiltered }) => {
   return (

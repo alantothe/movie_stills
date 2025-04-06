@@ -21,6 +21,9 @@ type TitleImageInfoProps = {
   };
 };
 
+
+
+
 const InfoSection = ({ info }: InfoProps) => {
   return (
     <div>

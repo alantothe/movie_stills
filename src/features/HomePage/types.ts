@@ -3,7 +3,6 @@ type Still = {
   image_url: string;
   imdb_id: string;
 };
-
 export type Movie = {
   imdb_id: string;
   title: string;
@@ -16,8 +15,6 @@ export type Movie = {
   imdb_rating: string;
   stills: Still[];
 };
-
-
 export type MovieFiltered = {
   imdb_id: string;
   title: string;

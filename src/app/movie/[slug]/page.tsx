@@ -1,19 +1,16 @@
-
 import MoviePage from "@/features/MoviePage/MoviePage";
-type BlogPageProps = {
-//params word needed 
+type MoviePageProps = {
+  //params word needed
   params: {
     slug: string;
   };
-}
-
-const BlogPage = ({ params } : BlogPageProps ) => {
+};
+const Page = ({ params }: MoviePageProps) => {
+  console.log(params.slug)
   return (
     <div>
-      <h1>Blog Post: {params.slug}</h1>
-      <MoviePage params={params.slug } />
+      <MoviePage slug={params.slug} />
     </div>
   );
 };
-
-export default BlogPage;
+export default Page;

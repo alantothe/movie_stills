@@ -1,7 +1,9 @@
 import MovieCard from "./MovieCard";
-import { Movie } from "../types";
+import { MovieFiltered } from "../types";
 
-const MasonryLayout = ({ data }: { data: Movie[] }) => {
+
+
+const MasonryLayout = ({ data }: { data: MovieFiltered[] }) => {
     return (
         <div className="w-full px-10 grid grid-cols-1 gap-4 place-items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {data?.map((movie) => (

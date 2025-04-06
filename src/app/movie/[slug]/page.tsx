@@ -11,7 +11,7 @@ const BlogPage = ({ params } : BlogPageProps ) => {
   return (
     <div>
       <h1>Blog Post: {params.slug}</h1>
-      <MoviePage/>
+      <MoviePage params={params.slug } />
     </div>
   );
 };

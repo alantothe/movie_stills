@@ -1,18 +1,20 @@
-import { Movie } from "../types"
-import Image from "next/image"
+import Image from "next/image";
+import { MovieFiltered } from "../types";
+import Link from "next/link";
+const MovieCard = ({ movie }: { movie: MovieFiltered }) => {
+  return (
+    <div className="w-full h-full">
+      <Link href={`/movie/${movie.slug}`}>
+        <Image
+          className="rounded-2xl w-full h-full object-cover"
+          alt={movie.title}
+          src={movie.stills[12].image_url}
+          width={300}
+          height={450}
+        />
+      </Link>
+    </div>
+  );
+};
 
-const MovieCard = ({ movie }: { movie: Movie }) => {
-    return (
-        <div className="w-full h-full">
-            <Image 
-                className="rounded-2xl w-full h-full object-cover"
-                alt={movie.title} 
-                src={movie.stills[3].image_url}
-                width={300}
-                height={450}
-            />
-        </div>
-    )
-}
-
-export default MovieCard
+export default MovieCard;

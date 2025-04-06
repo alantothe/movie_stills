@@ -1,10 +1,13 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import getMovie from "./api/getMovie";
-const MoviePage = () => {
+type MoviePageProps = {
+    params : string
+}
+const MoviePage = ({params}: MoviePageProps) => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["oneMovie"],
-    queryFn: () => getMovie("fight-club"),
+    queryFn: () => getMovie(params),
   });
   if (isLoading) return <p>is Loading...</p>;
   if (isError) return <p>Error: {isError}</p>;

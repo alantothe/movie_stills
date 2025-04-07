@@ -8,7 +8,7 @@ type FilterPageProps = {
 const FilterPage = ({ params }: FilterPageProps) => {
   console.log(params);
   return (
-    <div>
+    <div className="pt-5">
       <FilterPageResults type={params.type} slug={params.slug} />
     </div>
   );

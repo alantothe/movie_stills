@@ -9,7 +9,7 @@ type MasonryLayoutProps = {
 const MasonryLayout = ({ movies }: MasonryLayoutProps) => {
     
     return (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 px-10">
             {movies.map((movie) => (
                 <div key={movie.imdb_id}>
                     <MovieCard movie={movie} />

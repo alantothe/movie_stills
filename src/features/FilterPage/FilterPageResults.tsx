@@ -18,7 +18,8 @@ const FilterPageResults = ({ type, slug }: FilterPageResultsProps) => {
   if (isLoading) return <p>is Loading...</p>;
   if (isError) return <p> Error : {isError}</p>;
   console.log(data);
-    return <div>
+  return <div>
+      <h1 className="px-10 text-center">{slug} Films:</h1>
       <MasonryLayout movies={data!}/>
   </div>;
 };

@@ -1,8 +1,4 @@
-type DirectorOnlyProps = {
-  letter: string;
-  names: string[];
-};
-
+import { DirectorOnlyProps} from "@/utils/types"
 export default async function fetchDirectors(): Promise<DirectorOnlyProps[]> {
   const alphabetMap = new Map<string, string[]>(
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -10,9 +6,7 @@ export default async function fetchDirectors(): Promise<DirectorOnlyProps[]> {
       .map((letter): [string, string[]] => [letter, []])
   );
   const response = await fetch("http://localhost:8081/only/directors/");
-
   const data = await response.json();
-
   for (const value of data) {
     const firstLetter = value.director[0];
     if (alphabetMap.has(firstLetter)) {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-//generics - revisit this 
+//generics - revisit this
 type LetterProps<T> = {
   letter: string | number;
   names: T[];
@@ -15,7 +15,13 @@ const LetterSection = <T extends string | { title: string; slug: string }>({
       <ul>
         {names.map((value, index) => {
           if (typeof value === "string") {
-            return <li key={index}>{value}</li>;
+            const dashValue = value.replace(" ", "-").toLowerCase()
+            console.log(dashValue);
+            return (
+              <Link key={value} href={`/filter/directors/${dashValue}`}>
+                <li key={index}>{value}</li>
+              </Link>
+            );
           } else {
             return (
               <Link key={value.slug} href={`/movie/${value.slug}`}>

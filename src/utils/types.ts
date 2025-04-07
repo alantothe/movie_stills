@@ -1,25 +1,4 @@
-
-
-export type SingleMovieProps = {
-  title: string
-  slug: string
-}
-
-export type TitlesProps = {
-  letter: string | number;
-  titles: SingleMovieProps[];
-};
-
-export type LookupFunction = (name: string) => Promise<SingleStillMovieFiltered[]>;
-
-export type LookupFunctionMap = Map<string, LookupFunction>;
-
-export type SingleStillMovieFiltered = {
-  imdb_id: string;
-  title: string;
-  slug: string;
-  stills: string;
-};
+//from server
 
 export type Still = {
   id: number;
@@ -38,13 +17,23 @@ export type Movie = {
   imdb_rating: string;
   stills: Still[];
 };
-export type MovieFiltered = {
-  imdb_id: string;
-  title: string;
-  slug: string;
-  stills: Still[];
+
+//props
+
+export type SingleMovieProps = {
+  title: string
+  slug: string
+}
+
+export type TitleProps = {
+  letter: string | number;
+  titles: SingleMovieProps[];
 };
 
+export type DirectorOnlyProps = {
+  letter: string;
+  names: string[];
+};
 
 export type FilterPageResultsProps = {
   type: string;
@@ -54,3 +43,24 @@ export type FilterPageResultsProps = {
 export type filterFnProps = {
   type: string;
 };
+
+//maps / functions
+export type LookupFunction = (name: string) => Promise<SingleStillMovieFiltered[]>;
+
+export type LookupFunctionMap = Map<string, LookupFunction>;
+
+
+
+
+//generics 
+
+export type BaseMovie<T> = {
+  imdb_id: string;
+  title: string;
+  slug: string;
+  stills: T;
+};
+
+export type SingleStillMovieFiltered = BaseMovie<string>;
+
+export type MovieFiltered = BaseMovie<Still[]>;

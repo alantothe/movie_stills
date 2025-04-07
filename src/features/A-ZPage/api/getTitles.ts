@@ -1,6 +1,6 @@
-import { TitlesProps, SingleMovieProps } from "@/utils/types";
+import { TitleProps, SingleMovieProps } from "@/utils/types";
 
-export default async function getTitles(): Promise<TitlesProps[]> {
+export default async function getTitles(): Promise<TitleProps[]> {
   const alphabetMap = new Map<string, SingleMovieProps[]>(
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
       .split("")

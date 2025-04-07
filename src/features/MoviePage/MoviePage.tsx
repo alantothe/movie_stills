@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import getMovie from "./api/getMovie";
 import TitleImageInfo from "./components/TitleImageInfo";
-import AllStills from "./components/AllStills";
+import AllStills from "./components/AllStills/AllStills";
 type MoviePageProps = {
   slug: string;
 };
@@ -17,7 +17,7 @@ const MoviePage = ({ slug }: MoviePageProps) => {
   return (
     <div>
       {data ? (
-        <div>
+        <div className="px-3">
           <TitleImageInfo
             title={data.title}
             imageUrl={data.stills[0].image_url}

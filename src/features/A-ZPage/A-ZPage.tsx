@@ -9,6 +9,7 @@ const AZPage = () => {
   });
   if (isLoading) return <p>is Loading...</p>;
   if (isError) return <p>Error : {isError}</p>;
+  console.log(data)
   return (
     <div>
       <ul>

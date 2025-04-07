@@ -40,7 +40,7 @@ const TitleImageInfo = ({ title, imageUrl, info }: TitleImageInfoProps) => {
   return (
     <div>
       <h1>{title}</h1>
-      <Image alt={title} src={imageUrl} width={600} height={300}></Image>
+      <Image className="w-full h-full object-cover" alt={title} src={imageUrl} width={1000} height={1000}></Image>
       <InfoSection info={info} />
     </div>
   );

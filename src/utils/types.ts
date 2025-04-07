@@ -10,8 +10,16 @@ export type TitlesProps = {
   titles: SingleMovieProps[];
 };
 
+export type LookupFunction = (name: string) => Promise<SingleStillMovieFiltered[]>;
 
+export type LookupFunctionMap = Map<string, LookupFunction>;
 
+export type SingleStillMovieFiltered = {
+  imdb_id: string;
+  title: string;
+  slug: string;
+  stills: string;
+};
 
 export type Still = {
   id: number;

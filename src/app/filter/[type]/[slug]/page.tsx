@@ -1,19 +1,17 @@
-    type FilterPageProps = {
-        params: {
-            type: string,
-            slug: string
-        }
-    }
-
-const FilterPage = ({params} : FilterPageProps) => {
-
+import FilterPageResults from "@/features/FilterPage/FilterPageResults";
+type FilterPageProps = {
+  params: {
+    type: string;
+    slug: string;
+  };
+};
+const FilterPage = ({ params }: FilterPageProps) => {
+  console.log(params);
   return (
     <div>
-          <h1>hello {params.type}</h1>
-             <h1>world {params.type}</h1>
+      <FilterPageResults type={params.type} slug={params.slug} />
     </div>
   );
 };
 
 export default FilterPage;
-

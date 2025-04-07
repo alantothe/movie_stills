@@ -1,6 +1,8 @@
+import { SingleMovieProps } from "@/utils/types";
+import Link from "next/link";
 type LetterProps = {
   letter: string | number;
-  names: string[];
+  names: SingleMovieProps[];
 };
 
 const LetterSection = ({ letter, names }: LetterProps) => {
@@ -8,8 +10,10 @@ const LetterSection = ({ letter, names }: LetterProps) => {
     <div>
       <h1>{letter}</h1>
       <ul>
-        {names.map((director) => (
-          <li key={director}>{director}</li>
+        {names.map((value) => (
+          <Link key={value.title} href={`/movie/${value.slug}`}>
+            <li>{value.title}</li>
+          </Link>
         ))}
       </ul>
     </div>

@@ -1,3 +1,18 @@
+
+
+export type SingleMovieProps = {
+  title: string
+  slug: string
+}
+
+export type TitlesProps = {
+  letter: string | number;
+  titles: SingleMovieProps[];
+};
+
+
+
+
 export type Still = {
   id: number;
   image_url: string;

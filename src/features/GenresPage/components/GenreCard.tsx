@@ -6,9 +6,9 @@ type GenreCardProp = {
 
 const GenreCard = ({ genre }: GenreCardProp) => {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 h-36 flex items-center justify-center">
       <Link href={`filter/genres/${genre.toLowerCase()}`}>
-        <h1 className="">{genre}</h1>
+        <h1 className="text-center">{genre}</h1>
       </Link>
     </div>
   );

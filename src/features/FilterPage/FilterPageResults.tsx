@@ -1,28 +1,14 @@
-"use client"
+"use client";
 
-import functionMap from "./api/apiConfig";
-import { LookupFunctionMap, LookupFunction } from "@/utils/types";
+import filterFn from "./api/apiConfig";
+import { FilterPageResultsProps } from "@/utils/types";
 import { useQuery } from "@tanstack/react-query";
-type FilterPageResultsProps = {
-  type: string;
-  slug: string;
-};
-
-type filterFnProps = {
-  type: string;
-  functionMap: LookupFunctionMap;
-};
-function filterFn({
-  type,
-  functionMap,
-}: filterFnProps): LookupFunction | undefined {
-  return functionMap.get(type);
-}
+import { notFound } from "next/navigation";
 
 const FilterPageResults = ({ type, slug }: FilterPageResultsProps) => {
-  const fn = filterFn({ type, functionMap });
+  const fn = filterFn({ type });
   if (!fn) {
-    throw new Error(`No function found for type: ${type}`);
+    notFound();
   }
 
   const { data, isLoading, isError } = useQuery({

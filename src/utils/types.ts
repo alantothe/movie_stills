@@ -44,3 +44,13 @@ export type MovieFiltered = {
   slug: string;
   stills: Still[];
 };
+
+
+export type FilterPageResultsProps = {
+  type: string;
+  slug: string;
+};
+
+export type filterFnProps = {
+  type: string;
+};

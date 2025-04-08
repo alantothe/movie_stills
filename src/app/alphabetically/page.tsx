@@ -2,9 +2,9 @@ import AZPage from "@/features/A-ZPage/A-ZPage";
 
 const Alphabetically = () => {
   return (
-    <>
-    <AZPage/>
-    </>
+    <div className="pt-5 px-10">
+      <AZPage />
+    </div>
   );
 };
 

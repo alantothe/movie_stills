@@ -1,10 +1,10 @@
-import DirectorsPage from "@/features/DirectorsPage/DirectorsPage"
+import DirectorsPage from "@/features/DirectorsPage/DirectorsPage";
 const Directors = () => {
-    return (
-        <>
-            <DirectorsPage/>
-        </>
-    )
-}
+  return (
+    <div className="pt-5">
+      <DirectorsPage />
+    </div>
+  );
+};
 
-export default Directors
+export default Directors;

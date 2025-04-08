@@ -8,7 +8,7 @@ type MoviePageProps = {
 const Page = async ({ params }: MoviePageProps) => {
   const slug = await params;
   return (
-    <div>
+     <div className="pt-5">
       <MoviePage slug={slug.slug} />
     </div>
   );

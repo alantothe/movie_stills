@@ -10,7 +10,7 @@ const YearPage = () => {
   });
   if (isLoading) return <p>... is Loading</p>;
   if (isError) return <p>Error: {isError}</p>;
-    return <div className="grid grid-cols-1 mx-5 text-center sm:grid-cols-2 md:grid-cols-3">
+    return <div className="grid grid-cols-1 mx-5 gap-5 text-center sm:grid-cols-2 md:grid-cols-3">
       
         {data?.map((year) => (
             <div key={year}>

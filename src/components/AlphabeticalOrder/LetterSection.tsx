@@ -10,23 +10,34 @@ const LetterSection = <T extends string | { title: string; slug: string }>({
   names,
 }: LetterProps<T>) => {
   return (
-    <div>
-      <h1>{letter}</h1>
-      <ul>
+    <div className="mb-8">
+      <h1 className="  text-4xl sm:text-5xl font-bold text-white mb-6 tracking-wide drop-shadow">
+        {letter}
+      </h1>
+      <ul className="px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 list-disc list-inside text-gray-200">
         {names.map((value, index) => {
           if (typeof value === "string") {
-            const dashValue = value.replace(" ", "-").toLowerCase()
-            console.log(dashValue);
+            const dashValue = value.replace(/ /g, "-").toLowerCase();
             return (
-              <Link key={value} href={`/filter/directors/${dashValue}`}>
-                <li key={index}>{value}</li>
-              </Link>
+              <li key={index}>
+                <Link
+                  href={`/filter/directors/${dashValue}`}
+                  className="hover:underline hover:text-blue-400 transition"
+                >
+                  {value}
+                </Link>
+              </li>
             );
           } else {
             return (
-              <Link key={value.slug} href={`/movie/${value.slug}`}>
-                <li>{value.title}</li>
-              </Link>
+              <li key={value.slug}>
+                <Link
+                  href={`/movie/${value.slug}`}
+                  className="hover:underline hover:text-blue-400 transition"
+                >
+                  {value.title}
+                </Link>
+              </li>
             );
           }
         })}

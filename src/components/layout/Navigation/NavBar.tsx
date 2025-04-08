@@ -3,11 +3,15 @@ import LogoBar from "./components/LogoBar";
 import SubBar from "./components/SubBar";
 import { useState, useEffect } from "react";
 
+
 const NavBar = () => {
   const [toggleSubBar, setToggleSubBar] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
 
+
+
   useEffect(() => {
+
     const handleWindowResize = () => setScreenWidth(window.innerWidth);
     // Set initial screen width
     setScreenWidth(window.innerWidth);
@@ -16,6 +20,13 @@ const NavBar = () => {
     //close the eventlistener
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
+
+  useEffect(() => {
+  if (screenWidth > 980 && toggleSubBar) {
+    setToggleSubBar(false);
+  }
+}, [screenWidth, toggleSubBar]);
+
 
   const handleSubBarClick = () => {
     if (toggleSubBar) {

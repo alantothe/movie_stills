@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import getMovie from "./api/getMovie";
 import TitleImageInfo from "./components/TitleImageInfo";
 import AllStills from "./components/AllStills/AllStills";
+import Fancybox from "@/hooks/Fancy";
 type MoviePageProps = {
   slug: string;
 };
@@ -29,7 +30,23 @@ const MoviePage = ({ slug }: MoviePageProps) => {
               rating: data.rating,
             }}
           />
+                        <Fancybox
+        options={{
+          Carousel: {
+            infinite: false,
+          },
+          Toolbar: {
+            display: {
+              left: ["infobar"],
+              middle: ["zoomIn", "zoomOut"],
+              right: ["slideshow", "thumbs", "close"],
+            },
+          },
+        }}
+          >
+            
           <AllStills stills={data.stills} />
+      </Fancybox>
         </div>
       ) : null}
     </div>

@@ -6,13 +6,15 @@ type StillCardProps = {
 const StillCard = ({ still, id }: StillCardProps) => {
   return (
     <div>
-      <Image
-        className="w-full h-full object-cover"
-        alt={id}
-        src={still}
-        width={1000}
-        height={1000}
-      ></Image>
+
+        <Image
+          className="w-full h-full object-cover"
+          alt={id}
+          src={still}
+          data-fancybox="gallery"
+          width={1000}
+          height={1000}
+        ></Image>
     </div>
   );
 };

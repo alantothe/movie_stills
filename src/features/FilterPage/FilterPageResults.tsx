@@ -5,6 +5,8 @@ import { FilterPageResultsProps } from "@/utils/types";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
 import MasonryLayout from "./components/MasonryLayout";
+import { capitalizeWords } from "@/utils/capitalizeWords";
+
 const FilterPageResults = ({ type, slug }: FilterPageResultsProps) => {
   const fn = filterFn({ type });
   if (!fn) {
@@ -17,11 +19,17 @@ const FilterPageResults = ({ type, slug }: FilterPageResultsProps) => {
   });
   if (isLoading) return <p>is Loading...</p>;
   if (isError) return <p> Error : {isError}</p>;
-  console.log(data);
-  return <div>
-      <h1 className="px-10 text-center">{slug} Films:</h1>
-      <MasonryLayout movies={data!}/>
-  </div>;
+
+  const newSlug = capitalizeWords(slug);
+
+  console.log(newSlug);
+
+  return (
+    <div>
+      <h1 className="px-10 text-center">{newSlug} Films :</h1>
+      <MasonryLayout movies={data!} />
+    </div>
+  );
 };
 
 export default FilterPageResults;

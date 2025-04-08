@@ -5,7 +5,7 @@ https://github.com/user-attachments/assets/3883f62c-4c3a-4627-94eb-5d2d69893ea8
 
 ## Getting Started
 
-To get this project up and running locally, you'll need to clone and run the backend server first, then run this frontend (Next.js) client.
+To get this project up and running locally, you'll need to clone and run the backend server first, then run this frontend (Next.js) client. Client code is expecting the server on http://localhost:8081/
 
 1. This project depends on a backend server which can be found here:
 

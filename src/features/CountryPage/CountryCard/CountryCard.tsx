@@ -15,7 +15,7 @@ function filterCountry(string: string) {
 
 const CountryCard = ({ country, url }: CountryCardProps) => {
   const filteredCountry = filterCountry(country);
-  const countryCapitalized = capitalizeWords(filteredCountry)
+  const countryCapitalized = capitalizeWords(filteredCountry);
   return (
     <div className="relative w-full h-full group overflow-hidden rounded-xl shadow-lg opacity-75">
       <Link href={`/filter/countries/${filteredCountry.toLowerCase()}`}>

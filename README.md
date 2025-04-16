@@ -3,6 +3,15 @@
 https://github.com/user-attachments/assets/3883f62c-4c3a-4627-94eb-5d2d69893ea8
 
 
+<h2 style="margin-bottom: 0.5rem;">Built with:</h2>
+<p>
+  <img alt="TypeScript" src="https://img.shields.io/badge/typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+    <img alt="Next.js" src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
+    <img alt="React Query" src="https://img.shields.io/badge/reactquery-cc0000?style=for-the-badge&logo=reactquery&logoColor=white"/>
+    <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwind-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+
+
+
 ## Getting Started
 
 To get this project up and running locally, you'll need to clone and run the backend server first, then run this frontend (Next.js) client. Client code is expecting the server on http://localhost:8081/

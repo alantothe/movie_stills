@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/3883f62c-4c3a-4627-94eb-5d2d69893ea8
 <p>
   <img alt="TypeScript" src="https://img.shields.io/badge/typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
     <img alt="Next.js" src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
-    <img alt="React Query" src="https://img.shields.io/badge/reactquery-cc0000?style=for-the-badge&logo=reactquery&logoColor=white"/>
+  <img alt="React Query" src="https://img.shields.io/badge/react_query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"/>
     <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwind-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
 
 
